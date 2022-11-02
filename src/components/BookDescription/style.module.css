@@ -1,0 +1,57 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.name, .annotation {
+    width: 50%;
+    height: 300px;
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+.name {
+    justify-content: space-between;
+    margin-right: 40px;
+}
+
+.annotation {
+    flex-direction: column;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btns {
+    display: flex;
+    align-items: flex-end;
+}   
+
+.title {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 50%);
+    font-weight: normal;
+    margin: 5px 0;
+}
+
+.price {
+    font-size: 28px;
+    margin-top: 20px;
+}
+
+.title_2 {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}

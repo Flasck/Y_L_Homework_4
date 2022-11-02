@@ -1,0 +1,43 @@
+.wrapper {
+    display: flex;
+}
+
+.btn_minus, .btn_plus {
+    font-size: 50px;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.btn_minus {
+    background-color: rgb(100, 100, 100);
+    padding-bottom: 7px;
+}
+
+.score {
+    font-size: 30px;
+    margin: 0 20px;
+    font-weight: bold;
+    color: rgb(100, 100, 100);
+}
+
+.score_black {
+    font-size: 30px;
+    margin: 0 20px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+.btn_plus {
+    background-color: rgb(0, 0, 0);
+}
+
+.btn_minus:hover, .btn_plus:hover {
+    cursor: pointer;
+}
