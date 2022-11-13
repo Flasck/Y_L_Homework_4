@@ -1,0 +1,16 @@
+.article {
+	width: 80%;
+	min-height: 480px;
+	height: calc(100% + 50px);
+}
+
+.empty {
+	width: 100%;
+	min-height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+	font-weight: bold;
+	color: rgb(114, 114, 114);
+}

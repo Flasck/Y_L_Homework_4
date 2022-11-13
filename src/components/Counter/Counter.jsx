@@ -1,16 +1,29 @@
-import styles from './style.module.css'
-import { useCount } from '../../hooks/useCount'
-const classnames = require('classnames')
+import styles from "./style.module.css"
+import { useDispatch, useSelector } from "react-redux"
+import { increment, decrement } from "../../store/CounterSlice/CounterSlice"
+const classnames = require("classnames")
 
+export const Counter = ({ name }) => {
+	const dispatch = useDispatch()
+	const score = useSelector((store) => store.counter[name] || 0)
 
-export const Counter = () => {
-    let {count, decrement, increment} = useCount(0)
-    
-    return ( 
-        <div className={styles.wrapper}>
-            <button onClick={decrement} className={classnames(styles.btn_minus, {[styles.btn_minus_act]: count !== 0})}>-</button>
-            <span className={classnames(styles.score, count !== 0 ? styles.score_black: '')}>{count}</span>
-            <button onClick={increment} className={classnames(styles.btn_plus,{[styles.btn_plus_dis]: count === 10})}>+</button>
-        </div>
-    )
+	return (
+		<div className={styles.wrapper}>
+			<button
+				onClick={() => dispatch(decrement(name))}
+				className={classnames(styles.btn_minus, { [styles.btn_minus_act]: score !== 0 })}
+			>
+				-
+			</button>
+			<span className={classnames(styles.score, { [styles.score_black]: score !== 0 })}>
+				{score}
+			</span>
+			<button
+				onClick={() => dispatch(increment(name))}
+				className={classnames(styles.btn_plus, { [styles.btn_plus_dis]: score === 10 })}
+			>
+				+
+			</button>
+		</div>
+	)
 }

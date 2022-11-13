@@ -1,17 +1,21 @@
-import styles from "./style.module.css";
-import { Aside } from "../../components/Aside/Aside";
-import { BooksList } from "../../components/BooksList/BooksList";
-import { books } from "../../constants/mock";
-import { useState } from "react";
+import styles from "./style.module.css"
+import { StoreAside } from "../../components/StoreAside/StoreAside"
+import { StoreBooksList } from "../../components/StoreBooksList/StoreBooksList"
+import { loadBooks } from "../../store/BooksSlice/loadBooksList"
+import { useDispatch, useSelector } from "react-redux"
+import { useEffect } from "react"
 
 export const StorePage = () => {
-  const [value, setValue] = useState("");
-  return (
-    <>
-      <main className={styles.main}>
-        <Aside list={books} func={setValue} />
-        <BooksList arr={books} need_genre={value} />
-      </main>
-    </>
-  );
-};
+	const dispatch = useDispatch()
+	useEffect(() => loadBooks(dispatch), [])
+	const arr = useSelector((state) => state.books.entities)
+
+	return (
+		<>
+			<main className={styles.main}>
+				<StoreAside arr={arr} />
+				<StoreBooksList arr={arr} />
+			</main>
+		</>
+	)
+}
